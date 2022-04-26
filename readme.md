@@ -3,9 +3,8 @@
 
 # Configuración.
 
-# Requisito.
 
-- Npm, composer, Xampp, Lampp etc con PHP 7.3+,
+- Tener instalado: Npm, composer, Xampp, Lampp etc con PHP 7.3+,
 
 # Backend
 

@@ -20,4 +20,3 @@
 - desde la terminal ubicarse en CIReact/frontend y ejecutar
 - ejecutar en la terminal: npm install => genera la carpeta node_modules 
 - iniciar el proyecto con: npm start
-+

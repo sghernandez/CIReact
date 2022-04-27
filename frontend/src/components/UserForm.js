@@ -123,7 +123,7 @@ constructor(props)
       <div align="center"><h2><b>{this.id ? 'Edit' : 'Add'} User</b></h2></div>
         <div className="field">
            <label className="label">Name</label>
-           <input type="text" name='name' className={`input ${this.state.errors.name ? "is-danger" : ""}`} 
+           <input type="text" name='name' className={`form-control ${this.state.errors.name ? "is-danger" : ""}`} 
               required minLength='3' value={this.state.fields.name} 
               onInvalid={this.handleInvalid} onChange={this.handleChange} /> 
 
@@ -132,7 +132,7 @@ constructor(props)
 
         <div className="field">
            <label className="label">Email</label>
-           <input type="email" name='email' className={`input ${this.state.errors.email ? "is-danger" : ""}`} 
+           <input type="email" name='email' className={`form-control ${this.state.errors.email ? "is-danger" : ""}`} 
               required minLength='3' value={this.state.fields.email} 
               onInvalid={this.handleInvalid} onChange={this.handleChange} /> 
 
@@ -140,8 +140,8 @@ constructor(props)
         </div>    
 
         <div className="field">
-        <input type="submit" className="button is-info" value="Save" />&nbsp;&nbsp;&nbsp;
-            <Link to='/' className="button is-info">Back</Link>               
+        <input type="submit" className="btn btn-sm btn-outline-success" value="Save" />&nbsp;&nbsp;&nbsp;
+            <Link to='/' className="btn btn-sm btn-outline-info">Back</Link>               
         </div>  
 
       </form>

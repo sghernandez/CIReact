@@ -19,11 +19,6 @@ const UserList = () => {
         setUsers(users.data);
     }
 
-    const showDelete = (id) => {
-        setId(id);
-        setShow(true);        
-    }
-
     const handleDelete = async () =>
     {      
         setShow(false);
@@ -33,35 +28,40 @@ const UserList = () => {
     }
 
     return (
-        <div>            
-            <div align="center"><Link to="/add" className="button is-small is-info mt-5">Add User</Link></div>
-            <div className='card' style={{padding: '5px', margin: '30px'}}>
-            <table className="table is-striped is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div>        
+<div className='text-center' style={{margin: '30px 0 20px 0'}}><Link to="/add" className="btn btn-sm btn-outline-success">Add User</Link></div>
+<h2 className='text-center'>Users List</h2>
+<div className="table-responsive card" style={{padding: '10px'}}>
+        <table className="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Actions</th>              
+            </tr>
+          </thead>
+          <tbody>
                     { users.map((user, index) => (
                         <tr key={user.id}>
                             <td>{index + 1}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>
-                                <Link to={`/edit/${user.id}`} className="button is-small is-info">Edit</Link>&nbsp;&nbsp;
-                                <button onClick={() => showDelete(user.id)} className="button is-small is-danger">Delete</button>
+                                <Link to={`/edit/${user.id}`} className="btn btn-sm btn-outline-secondary">Edit</Link>&nbsp;&nbsp;
+                                <button onClick={() => {
+                                        setId(user.id);
+                                        setShow(true); 
+                                     }
+                                } className="btn btn-sm btn-outline-danger">Delete</button>
                             </td>
                         </tr>
                     )) }                    
                 </tbody>
-            </table>            
-          </div> 
-          <ModalConfirm show={show} handleClose={handleClose} handleDelete={handleDelete} />           
-        </div>
+        </table>
+      </div>            
+      <ModalConfirm show={show} handleClose={handleClose} handleDelete={handleDelete} />           
+    </div>
     )
 }
 

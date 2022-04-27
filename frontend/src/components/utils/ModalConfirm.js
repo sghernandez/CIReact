@@ -9,10 +9,10 @@ export default function ModalConfirm(props)
         </Modal.Header>
         <Modal.Body>Do You want delete the record?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
+          <Button variant="primary" onClick={props.handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={ props.handleDelete }>
+          <Button variant="danger" onClick={ props.handleDelete }>
             Delete
           </Button>
         </Modal.Footer>
